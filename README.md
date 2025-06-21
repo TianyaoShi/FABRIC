@@ -36,13 +36,13 @@ FABRIC/
 
 ## Framework Diagram
 
-![FABRIC Framework](FABRIC-flowchart.pdf)
+![FABRIC Framework](FABRIC-flowchart.png)
 
 ## Reproducibility
 
 All visualizations presented in the paper can be reproduced using the code available in `code/visualization.ipynb`.
 
-The raw profiling results of selected HPC workloads can be accessed at ![Google Drive](https://drive.google.com/file/d/1Fbo7hSWu_e1V3M2UxoZWJCrphymfk_0K/view?usp=sharing).
+The raw profiling results of selected HPC workloads can be accessed at [Google Drive](https://drive.google.com/file/d/1Fbo7hSWu_e1V3M2UxoZWJCrphymfk_0K/view?usp=sharing).
 
 
 ## Data Sources
