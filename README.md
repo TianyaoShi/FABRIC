@@ -4,6 +4,8 @@ This repository contains the code and data for the HotCarbon'25 paper "When Serv
 
 ## Overview
 
+![FABRIC Framework](FABRIC-flowchart.png)
+
 FABRIC (Fab-to-grave Analysis of Biodiversity-Related Impact of Computing) is a comprehensive framework for assessing the environmental impacts of computing hardware throughout their entire lifecycle, with a particular focus on biodiversity-related impact categories including:
 
 - **Acidification Potential (AP)** - Impacts on ecosystems from acid rain and soil acidification
@@ -11,6 +13,7 @@ FABRIC (Fab-to-grave Analysis of Biodiversity-Related Impact of Computing) is a 
 - **Freshwater Ecotoxicity (FETox)** - Toxic effects on freshwater species and ecosystems
 
 The framework covers the complete lifecycle from semiconductor fabrication to end-of-life recycling, analyzing CPUs, GPUs, memory (DRAM/HBM), and storage devices (SSDs/HDDs).
+
 
 ## Repository Structure
 
@@ -34,9 +37,7 @@ FABRIC/
 └── README.md
 ```
 
-## Framework Diagram
 
-![FABRIC Framework](FABRIC-flowchart.png)
 
 ## Reproducibility
 
