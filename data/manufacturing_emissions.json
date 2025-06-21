@@ -1,0 +1,523 @@
+{
+    "tsmc_acid_emissions_raw_pixels": {
+        "2016": {
+            "hydrocarbon": 237,
+            "hydrofluoric acid": 46,
+            "sulfuric acid": 27,
+            "hydrochloric acid": 38,
+            "chlorine": 47,
+            "nitric acid": 37,
+            "phosphoric acid": 11,
+            "ammonia": 122,
+            "total": 565
+        },
+        "2017": {
+            "hydrocarbon": 237,
+            "hydrofluoric acid": 47,
+            "sulfuric acid": 21,
+            "hydrochloric acid": 27,
+            "chlorine": 42,
+            "nitric acid": 43,
+            "phosphoric acid": 10,
+            "ammonia": 128,
+            "total": 555
+        },
+        "2018": {
+            "hydrocarbon": 220,
+            "hydrofluoric acid": 43,
+            "sulfuric acid": 16,
+            "hydrochloric acid": 21,
+            "chlorine": 42,
+            "nitric acid": 64,
+            "phosphoric acid": 10,
+            "ammonia": 165,
+            "total": 581
+        },
+        "2019": {
+            "hydrocarbon": 189,
+            "hydrofluoric acid": 48,
+            "sulfuric acid": 31,
+            "hydrochloric acid": 32,
+            "chlorine": 58,
+            "nitric acid": 27,
+            "phosphoric acid": 5,
+            "ammonia": 175,
+            "total": 565
+        },
+        "2020": {
+            "hydrocarbon": 199,
+            "hydrofluoric acid": 32,
+            "sulfuric acid": 53,
+            "hydrochloric acid": 42,
+            "chlorine": 75,
+            "nitric acid": 26,
+            "phosphoric acid": 11,
+            "ammonia": 128,
+            "total": 566
+        },
+        "2021": {
+            "hydrocarbon": 205,
+            "hydrofluoric acid": 32,
+            "sulfuric acid": 31,
+            "hydrochloric acid": 37,
+            "chlorine": 59,
+            "nitric acid": 26,
+            "phosphoric acid": 5,
+            "ammonia": 165,
+            "total": 560
+        },
+        "2022": {
+            "hydrocarbon": 265,
+            "hydrofluoric acid": 40,
+            "sulfuric acid": 33,
+            "hydrochloric acid": 35,
+            "chlorine": 76,
+            "nitric acid": 42,
+            "phosphoric acid": 7,
+            "ammonia": 110,
+            "total": 708
+        },
+        "2023": {
+            "hydrocarbon": 228,
+            "hydrofluoric acid": 40,
+            "sulfuric acid": 33,
+            "hydrochloric acid": 34,
+            "chlorine": 63,
+            "nitric acid": 38,
+            "phosphoric acid": 7,
+            "ammonia": 169,
+            "total": 612
+        }
+    },
+    "tsmc_emissions_macro_16thro23": {
+        "total_acid_mt": [300.22,295.2,309.26,298.35,299.55,296.91,288.6,250.4],
+        "per_unit_acid_g/wafer-mask-layer": [0.87,0.72,0.69,0.62,0.50,0.43,0.38,0.46],
+        "SOx_mt": [60.54, 82.5, 118.92, 32.18, 38.13, 39.48, 37.78, 40.7],
+        "NOx_mt": [33.08, 43.87, 39.71, 116.67, 170.36, 205.57, 159.87, 185.42],
+        "VOC_mt": [163.6, 170.8, 168.4, 102.1, 106.8, 107.7, 112.9, 94.4],
+        "TMAH_ppm": [16.3, 12.9, 13.1, 7.9, 6.3, 5.5, 3.8, 2.5],
+        "Cu2+_ppm": [0.19, 0.22, 0.18, 0.09, 0.07, 0.07, 0.06, 0.07],
+        "NH4-N_ppm": [41.5, 25.2, 21, 17.31, 14.27, 11.76, 9.69, 7.98],
+        "COD_ppm": [114.1, 112.5, 177.5, 185.5, 194, 180, 147, 114],
+        "per_unit_wastewater_L/wafer-mask-layer": [70.7, 70.0, 71.2, 89.5, 86.1, 78.9, 93.0, 132.8],
+        "estimated_F-_mg/L": [4.74,4.25,3.8,3.4,3.0,2.7,2.25,2.0]
+    },
+    "tsmc_electricity_consumption": {
+        "unit_consumption_kWh/wafer-mask-layer": [
+            21.8,
+            21.4,
+            22.3,
+            28.1,
+            26.7,
+            25.9,
+            27.7,
+            40.5
+        ],
+        "renewable_energy_ratio_%": [
+            0.020308692120227456,
+            0.008322237017310254,
+            0.06660590871117186,
+            6.8,
+            7.6,
+            9.2,
+            10.4,
+            11.2
+        ]
+    },
+    "hynix_emissions_macro_16thro23": {
+        "SOx_mt": [
+            19.1,
+            18.99,
+            13.500000000000002,
+            15.6,
+            14.899999999999999,
+            18.200000000000003,
+            29.0,
+            16.8
+        ],
+        "NOx_mt": [
+            20.53,
+            30.11,
+            241.8,
+            456.5,
+            716.8000000000001,
+            496.90000000000003,
+            243.7,
+            227.10000000000002
+        ],
+        "VOC_mt": [
+            0.35,
+            2.51,
+            18.5,
+            13.799999999999999,
+            9.899999999999999,
+            0.7,
+            0.3,
+            13.4
+        ],
+        "HF_mt": [
+            11.84,
+            5.609999999999999,
+            8.5,
+            5.699999999999999,
+            4.0,
+            6.7,
+            6.2,
+            1.2999999999999998
+        ],
+        "HCl_mt": [
+            7.82,
+            8.27,
+            14.200000000000001,
+            32.5,
+            29.799999999999997,
+            41.800000000000004,
+            34.7,
+            31.4
+        ],
+        "NH3_mt": [
+            17.45,
+            14.620000000000001,
+            35.800000000000004,
+            90.1,
+            64.89999999999999,
+            53.9,
+            33.5,
+            31.3
+        ],
+        "total_wastewater_nitrogen_mt": [
+            780.69,
+            944.47,
+            961.65,
+            1006.6700000000001,
+            1097.15,
+            1166.66,
+            1236.174,
+            1305.686
+        ],
+        "total_wastewater_phosphorus_mt": [
+            2,
+            2,
+            2,
+            1.6,
+            1.6,
+            1.0,
+            2.0,
+            1.0
+        ],
+        "COD_mt": [
+            229.61999999999998,
+            228.09,
+            238.32999999999998,
+            313.07,
+            599.8,
+            634.0,
+            647.6,
+            484.1
+        ],
+        "wastewater_fluoride_mt": [
+            156.37,
+            166.37,
+            171.23,
+            203.15,
+            19.2,
+            23.9,
+            36.5,
+            87.4
+        ],
+        "ammonia_nitrogen_mt": [
+            6.4,
+            6.84,
+            6.43,
+            11.3,
+            65.6,
+            65.4,
+            137,
+            80.0
+        ],
+        "wastewater_discharge_1000_m3": [
+            55610,
+            62210,
+            66603,
+            75190,
+            82297,
+            85787,
+            90789,
+            87350
+        ]
+    },
+    "hynix_production_data": {
+        "nand_k_wafers": [
+            2625,
+            2910,
+            3075,
+            2520,
+            2355,
+            2355,
+            2310,
+            1740
+        ],
+        "estimated_dram_k_wafers": [
+            3600,
+            3720,
+            4200,
+            4800,
+            5040,
+            5160,
+            4500,
+            4560
+        ],
+        "wafer_capacity_description": "https://datatrack.trendforce.com/Chart/groupContent/65/nand-flash-makers-fab-capacity-breakdown-by-brand",
+        "dram_revenue_ratio": [
+            0.7175709349501903,
+            0.7601447772150084,
+            0.8003679855535407,
+            0.751839047868763,
+            0.7064610877512639,
+            0.7116577288433787,
+            0.631282208639553,
+            0.6338533880486492
+        ],
+        "nand_revenue_ratio": [
+            0.25279342480728106,
+            0.22081942822306125,
+            0.18347990827855246,
+            0.19041954140334016,
+            0.2342051442711503,
+            0.2448834349447525,
+            0.3178714607250019,
+            0.2946085510896312
+        ],
+        "revenue_description": "https://www.skhynix.com/ir/UI-FR-IR12_T4 Audit Reports 2017-2023",
+        "electricity_consumption_GWh": [
+            6917.4,
+            7698.2,
+            8479,
+            9205,
+            9887,
+            10921,
+            12083,
+            12011
+        ],
+        "electricity_consumption_GJ": [
+            60401956,
+            65601501,
+            78421166,
+            78617897,
+            83403131,
+            95498700,
+            99215693,
+            76540811
+        ],
+        "renewable_energy_ratio_%": [
+            0,
+            0,
+            0,
+            0,
+            0.01,
+            4.0,
+            29.6,
+            30.0
+        ]
+    },
+    "dram_bit_density_by_year": [
+        0.105,
+        0.149,
+        0.191,
+        0.232,
+        0.296,
+        0.28769999999999996,
+        0.304,
+        0.367
+    ],
+    "dram_bit_density_description": "Gb/mm2 2021 & 2023 by estimation, 2024 0.43138 for sure from techinsights free report",
+    "ssd_bit_density_by_year": [
+        2.73,
+        3.55,
+        3.55,
+        6.53,
+        8.11,
+        10.8,
+        11.0,
+        14.7
+    ],
+    "vram_bit_density": {
+        "GDDR6": 0.093, 
+        "GDDR6_desc": "Micron 2y 2018",
+        "GDDR6X": 0.332, 
+        "GDDR6X_desc": "Samsung 1y 2022",
+        "HBM2": 0.087, 
+        "HBM2_desc": "Samsung 2y 2017",
+        "HBM2E": 0.161, 
+        "HBM2E_desc": "Hynix 1y 2019 -- source: HBM (High Bandwidth Memory) Technology Trend: 2024 and Beyond",
+        "HBM3": 0.149, 
+        "HBM3_desc": "Hynix 1z 2023"
+    },
+    "seagate_hdd_lca_results": {
+        "2013": {
+            "product name": "Savvio 10K.5 HDD",
+            "capacity (TB)": 0.9,
+            "Carbon footprint (kg CO2e)": 137.0,
+            "AP": 0.12,
+            "freshwater EP": 0.0524,
+            "marine EP": 0.0354,
+            "freshwater ecotoxicity": 904.296,
+            "marine ecotoxicity": 0.6817,
+            "lifecycle electricity consumption (kWh)": 120.0
+        },
+        "2014": {
+            "product name": "Enterprise Capacity 3.5 HDD",
+            "capacity (TB)": 6,
+            "Carbon footprint (kg CO2e)": 62.0,
+            "AP": 0.51,
+            "freshwater EP": null,
+            "marine EP": 0.14,
+            "freshwater ecotoxicity": 360.0,
+            "marine ecotoxicity": null,
+            "lifecycle electricity consumption (kWh)": 397.923
+        },
+        "2016": {
+            "product name": "Makara Enterprise Capacity 3.5 HDD",
+            "capacity (TB)": 8,
+            "Carbon footprint (kg CO2e)": 358.0,
+            "AP": 0.3,
+            "freshwater EP": 0.0638,
+            "marine EP": 0.159,
+            "freshwater ecotoxicity": 683.88,
+            "marine ecotoxicity": 0.8741800000000001,
+            "lifecycle electricity consumption (kWh)": 362.0
+        },
+        "2019": {
+            "product name": "Exos 16TB HDD (MA only)",
+            "capacity (TB)": 16,
+            "AP": 0.031,
+            "freshwater EP": null,
+            "marine EP": 0.00823,
+            "freshwater ecotoxicity": 21.4,
+            "marine ecotoxicity": null,
+            "lifecycle electricity consumption (kWh)": 228.0
+        }
+    },
+    "hdd_carbon_footprint_records": {
+        "Savvio 10K.5 HDD": {
+            "year": 2013,
+            "capacity (TB)": 0.9,
+            "carbon footprint (kg CO2e)": 46.580000000000005,
+            "power consumption (W)": 4.566210045662101
+        },
+        "Enterprise Capacity 3.5 HDD": {
+            "year": 2014,
+            "capacity (TB)": 6,
+            "carbon footprint (kg CO2e)": 62.0,
+            "power consumption (W)": 9.085
+        },
+        "Makara Enterprise Capacity 3.5 HDD": {
+            "year": 2016,
+            "capacity (TB)": 8,
+            "carbon footprint (kg CO2e)": 64.44,
+            "power consumption (W)": 8.264840182648403
+        },
+        "EXOS 15E900": {
+            "year": 2017,
+            "capacity (TB)": 0.6,
+            "carbon footprint (kg CO2e)": 13.2861,
+            "power consumption (W)": 7.2
+        },
+        "Enterprise Capacity 3.5 HDD (Helium)": {
+            "year": 2017,
+            "capacity (TB)": 10,
+            "carbon footprint (kg CO2e)": 18.200000000000003,
+            "power consumption (W)": 3.5502283105022827
+        },
+        "Skyhawk 3TB": {
+            "year": 2017,
+            "capacity (TB)": 3,
+            "carbon footprint (kg CO2e)": 50.445,
+            "power consumption (W)": 1.1187214611872147
+        },
+        "Skyhawk Surveillance HDD": {
+            "year": 2017,
+            "capacity (TB)": 4,
+            "carbon footprint (kg CO2e)": 29.849999999999998,
+            "power consumption (W)": 0.6506849315068494
+        },
+        "Skyhawk 6TB": {
+            "year": 2017,
+            "capacity (TB)": 6,
+            "carbon footprint (kg CO2e)": 42.78,
+            "power consumption (W)": 0.8287671232876712
+        },
+        "EXOS X12 - 12TB": {
+            "year": 2021,
+            "capacity (TB)": 12,
+            "carbon footprint (kg CO2e)": 39.6408,
+            "power consumption (W)": 5.148401826484018
+        },
+        "Exos 10E2400": {
+            "year": 2019,
+            "capacity (TB)": 1.2,
+            "carbon footprint (kg CO2e)": 13.213440000000002,
+            "power consumption (W)": 3.961187214611872
+        },
+        "Exos 5E8": {
+            "year": 2019,
+            "capacity (TB)": 8,
+            "carbon footprint (kg CO2e)": 34.6248,
+            "power consumption (W)": 3.7100456621004567
+        },
+        "Exos 7E8 (4TB)": {
+            "year": 2019,
+            "capacity (TB)": 4,
+            "carbon footprint (kg CO2e)": 21.62,
+            "power consumption (W)": 5.296803652968037
+        },
+        "EXOS X16 - 16TB": {
+            "year": 2019,
+            "capacity (TB)": 16,
+            "carbon footprint (kg CO2e)": 36.8,
+            "power consumption (W)": 5.205479452054795
+        },
+        "IronWolf": {
+            "year": 2020,
+            "capacity (TB)": 4,
+            "carbon footprint (kg CO2e)": 35.7732,
+            "power consumption (W)": 1.0273972602739725
+        },
+        "IronWolf Pro": {
+            "year": 2020,
+            "capacity (TB)": 8,
+            "carbon footprint (kg CO2e)": 31.9072,
+            "power consumption (W)": 1.9863013698630139
+        },
+        "BARRACUDA35 - 8TB": {
+            "year": 2020,
+            "capacity (TB)": 8,
+            "carbon footprint (kg CO2e)": 52.668000000000006,
+            "power consumption (W)": 0.8447488584474886
+        },
+        "EXOS 2X14 - 14 TB": {
+            "year": 2021,
+            "capacity (TB)": 14,
+            "carbon footprint (kg CO2e)": 28.7182,
+            "power consumption (W)": 5.353881278538812
+        },
+        "EXOS 7E8 - 8TB": {
+            "year": 2021,
+            "capacity (TB)": 8,
+            "carbon footprint (kg CO2e)": 24.587999999999997,
+            "power consumption (W)": 7.933789954337899
+        },
+        "EXOS X18 - 18TB": {
+            "year": 2021,
+            "capacity (TB)": 18,
+            "carbon footprint (kg CO2e)": 27.0864,
+            "power consumption (W)": 5.684931506849314
+        },
+        "EXOS X20 - 20TB": {
+            "year": 2023,
+            "capacity (TB)": 20,
+            "carbon footprint (kg CO2e)": 29.960000000000008,
+            "power consumption (W)": 5.8675799086758
+        }
+    }
+}
