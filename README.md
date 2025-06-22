@@ -65,7 +65,7 @@ If you use this code or data in your research, please cite:
 @inproceedings{shi2025fabric,
   title={When Servers Meet Species: A Fab-to-Grave Lens on Computing's Biodiversity Impact},
   author={Shi, Tianyao and Kumar, Ritbik and Hua, Inez and Ding, Yi},
-  booktitle={Proceedings of the 6th Workshop on
+  booktitle={Proceedings of the 4th Workshop on
 Sustainable Computer Systems (HotCarbon'25)},
   year={2025},
   organization={ACM}
