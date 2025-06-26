@@ -1,6 +1,6 @@
 # FABRIC: When Servers Meet Species
 
-This repository contains the code and data for the HotCarbon'25 paper "When Servers Meet Species: A Fab-to-Grave Lens on Computing's Biodiversity Impact" by Tianyao Shi, Ritbik Kumar, Inez Hua, and Yi Ding from Purdue University.
+This repository contains the code and data for the HotCarbon'25 paper "When Servers Meet Species: A Fab-to-Grave Lens on Computing's Biodiversity Impact" by Tianyao Shi, Ritbik Kumar, Inez Hua, and Yi Ding from Purdue University. [[Paper Link](https://arxiv.org/abs/2506.20442)]
 
 ## Overview
 
