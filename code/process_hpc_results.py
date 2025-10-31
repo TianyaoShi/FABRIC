@@ -321,6 +321,7 @@ epyc_9b14_results = {
     }
 }
 
+# FIXME Deprecated, wrong code
 def revise_power_gcp(power_list, tdp, vm_cores, host_cores, alpha=1.15):
     """
     Revise power values based on TDP and core counts

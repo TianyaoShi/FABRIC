@@ -13,16 +13,28 @@ from datetime import datetime
 
 """
 GCP CPU energy monitoring using CPU utilization as a proxy
-Using the power-util curve:
+Using the power-util curve (assuming linear relationship):
+vm_to_pm_ratio = num_cores_vm / num_cores_host
+p_idle = idle_power_ratio * tdp
+p_dynamic_range = tdp - p_idle
+p_vm = vm_to_pm_ratio * p_idle + vm_to_pm_ratio * p_dynamic_range * u_vm
+
+The accurate dynamic power model is slightly convex, where the first 50% package 
+utilization uses less power than the last 50%.  But we don't know what is happening
+in other vms and the marginal contribution of our VM to the total power consumption.
+The best guess is to assume a linear relationship.
+
+!!!DEPRECATED:
 u_pkg = (num_cores_vm / num_cores_host) * u_vm
 P_vm = (num_cores_vm / num_cores_host) * [P(idle) + [P(TDP) - P(idle)] * u_pkg^α]
-
 where:
 - u_vm is the CPU utilization of VM (percentage between 0-1)
 - num_cores_vm is the number of cores in the VM
 - num_cores_host is the number of cores in the host machine
 - P(idle) is assumed to be 30% of TDP
 - α is set to 1.15
+
+The ultimate solution is reserving sole-tenant nodes or baremetal servers, which will cost 5~10x bill.
 """
 
 TIME_OUT = 3600  # 1 hour
@@ -81,13 +93,16 @@ class GCPCPUMonitor:
             Estimated power consumption in Watts
         """
         # Calculate u_pkg = (num_cores_vm / num_cores_host) * u_vm
-        u_pkg = (self.num_cores_vm / self.num_cores_host) * cpu_util
+        # u_pkg = (self.num_cores_vm / self.num_cores_host) * cpu_util
+        vm_to_pm_ratio = self.num_cores_vm / self.num_cores_host
         
         # Calculate P(idle)
         p_idle = self.tdp * self.idle_power_ratio
+        p_dynamic_range = self.tdp - p_idle
         
         # Calculate P_vm = (num_cores_vm / num_cores_host) * [P(idle) + [P(TDP) - P(idle)] * u_pkg^α]
-        p_vm = (self.num_cores_vm / self.num_cores_host) * (p_idle + (self.tdp - p_idle) * (u_pkg ** self.alpha))
+        # p_vm = (self.num_cores_vm / self.num_cores_host) * (p_idle + (self.tdp - p_idle) * (u_pkg ** self.alpha))
+        p_vm = vm_to_pm_ratio * p_idle + vm_to_pm_ratio * p_dynamic_range * cpu_util
         
         return p_vm
 
