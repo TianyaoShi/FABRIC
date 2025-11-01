@@ -38,6 +38,9 @@ The ultimate solution is reserving sole-tenant nodes or baremetal servers, which
 """
 
 TIME_OUT = 3600  # 1 hour
+LOG_DIR = "logs"
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
 
 class GCPCPUMonitor:
     def __init__(self,
@@ -296,6 +299,10 @@ if __name__ == "__main__":
 
     # Now monitor the command execution
     if args.command:
+        # Initialize variables that will be used in results
+        return_code = 0
+        command_log_file = None
+        
         program_monitor = GCPCPUMonitor(
             project_name='program_power',
             num_cores_vm=args.num_cores_vm,
@@ -309,46 +316,69 @@ if __name__ == "__main__":
         start_time = time.time()
         program_monitor.start()
         
+        # Create logfile with automatic naming
+        timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+        command_log_file = f"command_output_{timestamp_str}.log"
+        command_log_file = os.path.join(LOG_DIR, command_log_file)
+        
         try:
             print(f"Running command: {args.command}")
-            process = subprocess.Popen(args.command, shell=True)
+            print(f"Command output will be saved to: {command_log_file}")
             
-            # Monitor the process while it's running
-            while process.poll() is None:
-                time.sleep(0.5)  # Check status more frequently
+            # Open logfile for writing command output
+            with open(command_log_file, 'w') as logfile:
+                process = subprocess.Popen(
+                    args.command, 
+                    shell=True,
+                    stdout=logfile,
+                    stderr=subprocess.STDOUT,  # Redirect stderr to stdout (logfile)
+                    universal_newlines=True
+                )
                 
-                # Ensure the monitoring process is still alive
-                if program_monitor.process is None or not program_monitor.process.is_alive():
-                    print("Warning: Monitor process died, restarting...")
-                    program_monitor.stop()
-                    program_monitor.start()
+                # Monitor the process while it's running
+                while process.poll() is None:
+                    time.sleep(0.5)  # Check status more frequently
+                    
+                    # Ensure the monitoring process is still alive
+                    if program_monitor.process is None or not program_monitor.process.is_alive():
+                        print("Warning: Monitor process died, restarting...")
+                        program_monitor.stop()
+                        program_monitor.start()
+                    
+                    # Check for timeout or shutdown request
+                    if time.time() - start_time > TIME_OUT:
+                        print("Timeout reached, terminating process.")
+                        process.terminate()
+                        break
+                        
+                    if shutdown_requested:
+                        print("Shutdown requested, terminating process.")
+                        process.terminate()
+                        break
+                        
+                # Wait for process to complete
+                process.wait()
                 
-                # Check for timeout or shutdown request
-                if time.time() - start_time > TIME_OUT:
-                    print("Timeout reached, terminating process.")
-                    process.terminate()
-                    break
-                    
-                if shutdown_requested:
-                    print("Shutdown requested, terminating process.")
-                    process.terminate()
-                    break
-                    
-            # Wait for process to complete
-            process.wait()
+            # Get return code for logging
+            return_code = process.returncode
             
         except KeyboardInterrupt:
             print("Process interrupted by user.")
             if process.poll() is None:
                 process.terminate()
+            return_code = -1  # Set error code for interrupted process
                 
         except Exception as e:
             print(f"Command execution failed: {e}")
+            return_code = -1  # Set error code for failed execution
             
         finally:
             # Always stop monitoring
             program_monitor.stop()
             end_time = time.time()
+            
+        print(f"Command completed with return code: {return_code}")
+        print(f"Command output saved to: {command_log_file}")
             
         # Get the results
         program_summary = program_monitor.get_summary()
@@ -358,6 +388,7 @@ if __name__ == "__main__":
             "start_timestamp": start_time,
             "end_timestamp": end_time,
             "command": args.command,
+            "return_code": return_code,
             "vm_cores": program_monitor.num_cores_vm,
             "host_cores": program_monitor.num_cores_host,
             "tdp": program_monitor.tdp,
@@ -368,12 +399,14 @@ if __name__ == "__main__":
             "duration": end_time - start_time,
             "monitor_coverage": program_summary.get('coverage_percentage', 0),
             "samples_collected": program_summary.get('samples_count', 0),
-            "data_file": program_monitor.output_file
+            "data_file": program_monitor.output_file,
+            "log_file": command_log_file
         }
         
         # Print summary information
         print("\nExecution Summary:")
         print(f"Command: {args.command}")
+        print(f"Return code: {results['return_code']}")
         print(f"Duration: {results['duration']:.2f} seconds")
         print(f"Average power: {results['program_power']:.2f} Watts")
         print(f"Total energy: {results['program_energy']:.2f} Joules")
@@ -389,5 +422,6 @@ if __name__ == "__main__":
             
         print(f"Results saved to: {results_file}")
         print(f"Raw monitoring data: {program_monitor.output_file}")
+        print(f"Command output log: {command_log_file}")
     else:
         print("No command specified. Only idle power was measured.")
