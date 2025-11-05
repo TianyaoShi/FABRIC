@@ -121,11 +121,12 @@ dmypy.json
 *.csv
 *.json.bak
 *.tmp
+summary.txt
 
 # CPU monitoring output files
 *cpu_profile_*.json
 *_power_*.csv
-profile_results_*/
+profile_results/
 
 # HPC benchmark results
 *.phoronix-test-suite/
@@ -153,6 +154,7 @@ Thumbs.db
 *.backup
 
 # Large data files (optional - uncomment if needed)
+command_output_*
 # *.h5
 # *.hdf5
 # *.pkl

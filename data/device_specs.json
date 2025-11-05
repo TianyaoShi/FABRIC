@@ -18,7 +18,7 @@
             "io_die_size_mm2": 416,
             "io_die_technology_node_nm": 14,
             "production_year": 2019,
-            "TDP": 280,
+            "TDP": 240,
             "num_cores": 64,
             "num_threads": 128,
             "peak_tflops": 3.38,
@@ -95,6 +95,31 @@
             "num_threads": 192,
             "peak_tflops": 5.68,
             "packaging_mass": 500
+        },
+        "EPYC 9B45": {
+            "component_type": "CPU",
+            "name": "AMD EPYC 9B45",
+            "net_weight": 140,
+            "gross_weight": 500,
+            "distance": {
+                "Truck": 200,
+                "Ship": 14000,
+                "Air": 0
+            },
+            "recycling_rate": 0.9,
+            "inceneration_rate": 0.08,
+            "landfill_rate": 0.02,
+            "die_size_mm2": 847.2,
+            "technology_node_nm": 4,
+            "io_die_size_mm2": 397,
+            "io_die_technology_node_nm": 6,
+            "production_year": 2024,
+            "TDP": 400,
+            "num_cores": 96,
+            "num_threads": 192,
+            "peak_tflops": 6.0,
+            "packaging_mass": 500,
+            "comment": "Estimated TDP and die size based on 9645 and 9655, the weight and tflops are not reliable"
         }
     },
     "GPUs": {

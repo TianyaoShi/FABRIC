@@ -222,6 +222,7 @@ def calculate_cpu_manufacturing_impacts(cpu_specs, prodcution_yield=0.875):
         7: 87,
         6: 87,
         5: 81,
+        4: 81,
         3: 81
     }
 

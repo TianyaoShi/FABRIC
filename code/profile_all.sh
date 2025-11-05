@@ -65,6 +65,10 @@ LOG_FILE="${LOG_DIR}/profile_all_${TIMESTAMP}.log"
 echo "===================================" | tee -a "$LOG_FILE"
 echo "Starting profiling of all tests at: $(date)" | tee -a "$LOG_FILE"
 echo "Results will be saved in: $RESULTS_DIR" | tee -a "$LOG_FILE"
+echo " CPU and VM specifications:" | tee -a "$LOG_FILE"
+echo "  - Host CPU cores: $NUM_CORES_HOST" | tee -a "$LOG_FILE"
+echo "  - VM CPU cores: $NUM_CORES_VM" | tee -a "$LOG_FILE"
+echo "  - TDP: ${TDP}W" | tee -a "$LOG_FILE"
 echo "===================================" | tee -a "$LOG_FILE"
 
 # Run each test
